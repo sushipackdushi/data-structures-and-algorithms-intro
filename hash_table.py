@@ -26,16 +26,21 @@ class HashTable:
                     return self.data_map[index][i][1]
         return None
 
+    def keys(self):
+        all_keys = []
+        for i in range(len(self.data_map)):
+            if self.data_map[i]:
+                for j in range(len(self.data_map[i])):
+                    all_keys.append(self.data_map[i][j][0])
+        return all_keys
+
+
 
 my_hash = HashTable()
 
 my_hash.set_item('bolts', 1400)
 my_hash.set_item('washers', 120)
-
-print(my_hash.get_item('bolts'))
-print(my_hash.get_item('washers'))
-print(my_hash.get_item('lumber'))
-
+my_hash.set_item('lumber', 2000)
 
 my_hash.print_table()
 
